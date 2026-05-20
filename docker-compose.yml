@@ -29,6 +29,7 @@ services:
       DB_USER: ${DB_USER}
       DB_PASS: ${DB_PASS}
       COOKIE_VALIDATION_KEY: ${COOKIE_VALIDATION_KEY}
+      YII_ENV: prod
     volumes:
       - .:/app
     depends_on:

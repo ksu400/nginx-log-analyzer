@@ -70,9 +70,11 @@ docker exec nginx-log-analyzer-app-1 php yii parse-log /tmp/access.log
 
 Windows (cmd):
 ```cmd
-docker cp C:\путь\к\вашему\access.log nginx-log-analyzer-app-1:/tmp/access.log
+docker cp "C:\путь\к\вашему\access.log" nginx-log-analyzer-app-1:/tmp/access.log
 docker exec nginx-log-analyzer-app-1 php yii parse-log /tmp/access.log
 ```
+
+> Если в пути есть пробелы или кириллица — обязательно оборачивай путь в кавычки.
 
 Готово — открывай http://localhost:8080
 
@@ -103,7 +105,7 @@ docker exec nginx-log-analyzer-app-1 php yii parse-log --batchSize=1000 /tmp/acc
 
 Windows (cmd):
 ```cmd
-docker cp C:\путь\к\файлу\любое_имя.log nginx-log-analyzer-app-1:/tmp/любое_имя.log
+docker cp "C:\путь\к\файлу\любое_имя.log" nginx-log-analyzer-app-1:/tmp/любое_имя.log
 docker exec nginx-log-analyzer-app-1 php yii parse-log /tmp/любое_имя.log
 ```
 
