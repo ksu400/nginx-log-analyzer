@@ -31,9 +31,9 @@ copy .env.example .env
 
 | Переменная | По умолчанию | Описание |
 |---|---|---|
-| `DB_PASS` | — | Пароль пользователя MySQL |
-| `MYSQL_ROOT_PASSWORD` | — | Пароль root MySQL |
-| `COOKIE_VALIDATION_KEY` | — | Случайная строка 32+ символа |
+| `DB_PASS` | — | Пароль пользователя MySQL (**обязателен**, не оставляй пустым) |
+| `MYSQL_ROOT_PASSWORD` | — | Пароль root MySQL (**обязателен**, должен совпадать с `DB_PASS`) |
+| `COOKIE_VALIDATION_KEY` | — | Случайная строка **минимум 32 символа** (только латиница и цифры) |
 | `APP_PORT` | `8080` | Порт приложения (меняй если занят) |
 | `DB_HOST` | `db` | Имя сервиса MySQL в Docker-сети |
 | `DB_PORT` | `3306` | Порт MySQL внутри Docker-сети |
@@ -41,7 +41,7 @@ copy .env.example .env
 ### 3. Запустить контейнеры
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
 Запустятся три контейнера:
